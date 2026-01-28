@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bragent AI</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon">🤖</div>
+        <div class="logo-text">
+          <span class="logo-title">Bragent</span>
+          <span class="logo-subtitle">AI Browser Agent</span>
+        </div>
+      </div>
+      <div class="status-badge" id="statusBadge">
+        <span class="status-dot"></span>
+        <span class="status-text">Подключение...</span>
+      </div>
+    </header>
+
+    <!-- Chat Area -->
+    <div class="chat-area" id="chatArea">
+      <div class="welcome" id="welcome">
+        <div class="welcome-avatar">✨</div>
+        <h2>Привет!</h2>
+        <p>Я AI-агент для управления браузером. Напиши что нужно сделать.</p>
+        
+        <div class="quick-actions">
+          <button class="quick-btn" data-task="Открой YouTube и найди расслабляющую музыку">
+            <span class="quick-icon">🎵</span>
+            <span>Музыка</span>
+          </button>
+          <button class="quick-btn" data-task="Открой ВКонтакте и покажи новости">
+            <span class="quick-icon">💬</span>
+            <span>ВКонтакте</span>
+          </button>
+          <button class="quick-btn" data-task="Открой Google и найди погоду в Москве">
+            <span class="quick-icon">🌤️</span>
+            <span>Погода</span>
+          </button>
+          <button class="quick-btn" data-task="Открой Яндекс Почту">
+            <span class="quick-icon">📧</span>
+            <span>Почта</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="messages" id="messages"></div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-area">
+      <div class="input-container">
+        <textarea 
+          id="taskInput" 
+          placeholder="Напиши задачу..."
+          rows="1"
+        ></textarea>
+        <button class="send-btn" id="sendBtn">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <button class="stop-btn" id="stopBtn">
+        <span>⏹</span> Остановить
+      </button>
+    </div>
+  </div>
+
+  <script src="panel.js"></script>
+</body>
+</html>

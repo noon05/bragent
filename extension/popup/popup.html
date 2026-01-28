@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bragent AI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon">🤖</div>
+        <div class="logo-text">
+          <span class="logo-title">Bragent</span>
+          <span class="logo-subtitle">AI Browser Agent</span>
+        </div>
+      </div>
+      <div class="status-indicator" id="statusIndicator">
+        <span class="status-dot"></span>
+        <span class="status-text">Подключение...</span>
+      </div>
+    </header>
+
+    <!-- Chat Area -->
+    <div class="chat-container" id="chatContainer">
+      <div class="welcome-message" id="welcomeMessage">
+        <div class="welcome-icon">👋</div>
+        <h3>Привет!</h3>
+        <p>Я автономный AI-агент для управления браузером.</p>
+        <p class="examples-title">Попробуй:</p>
+        <div class="examples">
+          <button class="example-btn" data-task="Открой Яндекс Почту и покажи последние письма">📧 Проверить почту</button>
+          <button class="example-btn" data-task="Найди на Яндекс.Еде BBQ-бургер">🍔 Заказать еду</button>
+          <button class="example-btn" data-task="Открой ВКонтакте и покажи новости">📱 Открыть ВК</button>
+        </div>
+      </div>
+      
+      <div class="messages" id="messages"></div>
+    </div>
+
+    <!-- Security Prompt -->
+    <div class="security-prompt hidden" id="securityPrompt">
+      <div class="security-icon">⚠️</div>
+      <p class="security-text" id="securityText"></p>
+      <div class="security-actions">
+        <button class="btn btn-danger" id="securityDeny">Отменить</button>
+        <button class="btn btn-success" id="securityApprove">Разрешить</button>
+      </div>
+    </div>
+
+    <!-- User Input Prompt -->
+    <div class="user-input-prompt hidden" id="userInputPrompt">
+      <p class="input-question" id="inputQuestion"></p>
+      <input type="text" class="input-field" id="userInputField" placeholder="Введите ответ...">
+      <button class="btn btn-primary" id="submitInput">Отправить</button>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-container">
+      <div class="input-wrapper">
+        <textarea 
+          id="taskInput" 
+          placeholder="Напиши, что нужно сделать..."
+          rows="1"
+        ></textarea>
+        <button class="send-btn" id="sendBtn" title="Отправить">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2L15 22L11 13L2 9L22 2Z"/>
+          </svg>
+        </button>
+      </div>
+      <button class="stop-btn hidden" id="stopBtn">
+        <span>⏹</span> Остановить
+      </button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
